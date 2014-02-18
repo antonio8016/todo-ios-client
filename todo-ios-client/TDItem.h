@@ -7,11 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <NSRails/NSRails.h>
 
-@interface TDItem : NSObject
+@interface TDItem : NSRRemoteObject
 
 @property (strong, nonatomic) NSString *name;
-
-+ (void)all:(void(^)(NSArray *items, NSError *error))allItemsBlock;
 
 @end

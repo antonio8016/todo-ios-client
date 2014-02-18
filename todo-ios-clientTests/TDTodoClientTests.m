@@ -20,7 +20,8 @@
 - (void)setUp
 {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    [NSRConfig defaultConfig].appURL = @"http://todo-rest-api.herokuapp.com";
+    [NSRConfig defaultConfig].usesWrappersInSerialization = NO;
 }
 
 - (void)tearDown
@@ -29,15 +30,60 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testReturnAll
 {
     TRVSMonitor *monitor = [TRVSMonitor monitor];
-    [TDItem all:^(NSArray *items, NSError *error) {
-        for (TDItem *item in items) {
-            NSLog(@"Item: %@", item.name);
+    [TDItem remoteAllAsync:^(NSArray *allItems, NSError *error) {
+        for (TDItem *item in allItems) {
+            NSLog(@"Item name: %@", item.name);
+            NSLog(@"Item id: %@", item.remoteID);
         }
         [monitor signal];
-        
+    }];
+    [monitor wait];
+}
+
+- (void)testReturnOne
+{
+    TRVSMonitor *monitor = [TRVSMonitor monitor];
+    [TDItem remoteObjectWithID:@"5302add7c20c3c0200441889"
+                         async:^(TDItem *item, NSError *error) {
+        NSLog(@"Item name: %@", item.name);
+        NSLog(@"Item id: %@", item.remoteID);
+        [monitor signal];
+    }];
+    [monitor wait];
+}
+
+- (void)testAddAndRemoveOne
+{
+    TRVSMonitor *monitor = [TRVSMonitor monitor];
+    TDItem *item = [[TDItem alloc] init];
+    item.name = [NSString stringWithFormat:@"note at %@", [NSDate date]];
+    [item remoteCreateAsync:^(NSError *error) {
+        if (!error) {
+            [item remoteDestroyAsync:^(NSError *error) {
+                NSLog(@"Destroy error: %@", error);
+                [monitor signal];
+            }];
+        }
+    }];
+    [monitor wait];
+}
+
+- (void)testEdit
+{
+    TRVSMonitor *monitor = [TRVSMonitor monitor];
+    TDItem *item = [[TDItem alloc] init];
+    item.name = [NSString stringWithFormat:@"note at %@", [NSDate date]];
+    [item remoteCreateAsync:^(NSError *error) {
+        if (!error) {
+            item.name = [NSString stringWithFormat:@"note at %@", [NSDate date]];
+            [item remoteUpdateAsync:^(NSError *error) {
+                NSLog(@"Destroy error: %@", error);
+            }];
+        }
+        [monitor signal];
     }];
     [monitor wait];
 }
