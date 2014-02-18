@@ -122,6 +122,7 @@ static NSMutableArray *overrideConfigStack = nil;
 		self.succinctErrorMessages = YES;
 		self.timeoutInterval = 60.0f;
 		self.performsCompletionBlocksOnMainThread = YES;
+        self.usesWrappersInSerialization = YES;
         
         [self configureToRailsVersion:NSRRailsVersion4];
 	}

@@ -98,7 +98,7 @@
  
  It should be noted that this property will be automatically updated after remoteCreate, as will anything else that is returned from that create.
  */
-@property (nonatomic, strong) NSNumber *remoteID;
+@property (nonatomic, strong) id remoteID;
 
 /**
  The most recent dictionary of all properties returned by Rails, exactly as it returned it. (read-only)

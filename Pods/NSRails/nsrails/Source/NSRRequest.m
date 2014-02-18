@@ -32,7 +32,7 @@
 
 #import "NSRRequest.h"
 #import "NSData+NSRBase64.h"
-
+#import "NSRConfig.h"
 
 #if NSRLog > 0
 
@@ -93,8 +93,13 @@ NSRLogTagged(inout, @"%@ %@", [NSString stringWithFormat:__VA_ARGS__],(NSRLog > 
 	self.config = [o.class config];
 	
 	//prepend the ID: action -> 1/action
-	if (o.remoteID && !ignoreID)
-		method = [[o.remoteID stringValue] stringByAppendingPathComponent:method];
+	if (o.remoteID && !ignoreID) {
+        if ([o.remoteID isKindOfClass:[NSNumber class]]) {
+            o.remoteID = [o.remoteID stringValue];
+        }
+        method = [o.remoteID stringByAppendingPathComponent:method];
+    }
+		
 	
 	//prepend the classname: 1/action -> class/1/action
 	[self routeToClass:[o class] withCustomMethod:method];
@@ -131,7 +136,7 @@ NSRLogTagged(inout, @"%@ %@", [NSString stringWithFormat:__VA_ARGS__],(NSRLog > 
 
 - (void) setBodyToObject:(NSRRemoteObject *)obj
 {
-	self.body = [obj remoteDictionaryRepresentationWrapped:NO];
+	self.body = [obj remoteDictionaryRepresentationWrapped:[NSRConfig defaultConfig].usesWrappersInSerialization];
 }
 
 # pragma mark - Factory requests
