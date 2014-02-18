@@ -31,10 +31,15 @@
 
 - (void)testExample
 {
-    
+    TRVSMonitor *monitor = [TRVSMonitor monitor];
     [TDItem all:^(NSArray *items, NSError *error) {
-        NSLog(@"Items: %@", items);
+        for (TDItem *item in items) {
+            NSLog(@"Item: %@", item.name);
+        }
+        [monitor signal];
+        
     }];
+    [monitor wait];
 }
 
 @end

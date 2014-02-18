@@ -20,11 +20,11 @@
     NSIndexSet *statusCodes = RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful); // Anything in 2xx
     RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:mapping
                                                                                             method:RKRequestMethodAny
-                                                                                       pathPattern:@"/items"
+                                                                                       pathPattern:nil
                                                                                            keyPath:nil
                                                                                        statusCodes:statusCodes];
     
-    NSURL *baseUrl = [NSURL URLWithString:@"http://todo-rest-api.herokuapp.com"];
+    NSURL *baseUrl = [NSURL URLWithString:@"http://todo-rest-api.herokuapp.com/items"];
     NSURLRequest *request = [NSURLRequest requestWithURL:baseUrl];
     RKObjectRequestOperation *operation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[responseDescriptor]];
     [operation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *result) {
