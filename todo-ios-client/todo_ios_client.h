@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <RestKit.h>
 
 @interface todo_ios_client : NSObject
 

@@ -7,6 +7,9 @@
 //
 
 #import <XCTest/XCTest.h>
+#import <TRVSMonitor/TRVSMonitor.h>
+
+#import "TDItem.h"
 
 @interface todo_ios_clientTests : XCTestCase
 
@@ -28,7 +31,10 @@
 
 - (void)testExample
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    
+    [TDItem all:^(NSArray *items, NSError *error) {
+        NSLog(@"Items: %@", items);
+    }];
 }
 
 @end
