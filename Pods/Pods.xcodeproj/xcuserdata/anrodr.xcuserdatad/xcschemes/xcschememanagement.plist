@@ -4,37 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-AFNetworking.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-ISO8601DateFormatterValueTransformer.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-RKValueTransformers.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-RestKit.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-SOCKit.xcscheme</key>
+		<key>Pods-NSRails.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Pods-TRVSMonitor.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-TransitionKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -47,42 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>121BA29055144429BFFA3C59</key>
+		<key>1F0FD3525D61453D9D65D418</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>14358C1AE2314F20A4CE0A1A</key>
+		<key>4097933CCF7A4A6CB7DAB2E9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6DB785CF1CDF47C4B73C02B5</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>7448E004E38E4BC39C01714D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>85AABDCC7B70479D93B75EEF</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>ABB541F790D5468CBB7EE756</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>ACEBAB2074CC4D77A47F1F62</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F33452313A594B24AFB872FC</key>
+		<key>9A9451691312480CA6FD89FB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
