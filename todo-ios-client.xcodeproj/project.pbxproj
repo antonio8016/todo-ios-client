@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		80133D18A68440639D91BAB3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 51E70883E2B24CE1894E42C3 /* libPods.a */; };
 		D5E75B6F47674D16A3D0CF10 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 51E70883E2B24CE1894E42C3 /* libPods.a */; };
 		F02F53B018B2C7080071612B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F02F53AF18B2C7080071612B /* Foundation.framework */; };
 		F02F53B518B2C7080071612B /* todo_ios_client.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F02F53B418B2C7080071612B /* todo_ios_client.h */; };
@@ -63,7 +62,7 @@
 		F02F53C718B2C7080071612B /* todo-ios-clientTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "todo-ios-clientTests-Info.plist"; sourceTree = "<group>"; };
 		F02F53C918B2C7080071612B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F02F53CB18B2C7080071612B /* todo_ios_clientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = todo_ios_clientTests.m; sourceTree = "<group>"; };
-		F02F53D518B2C8450071612B /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		F02F53D518B2C8450071612B /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F0F8CB7A18B2C95800F2E3DD /* TDItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDItem.h; sourceTree = "<group>"; };
 		F0F8CB7B18B2C95800F2E3DD /* TDItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDItem.m; sourceTree = "<group>"; };
 		F0F8CB7D18B2DBEB00F2E3DD /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -96,7 +95,6 @@
 				F02F53BE18B2C7080071612B /* XCTest.framework in Frameworks */,
 				F02F53C118B2C7080071612B /* UIKit.framework in Frameworks */,
 				F02F53BF18B2C7080071612B /* Foundation.framework in Frameworks */,
-				80133D18A68440639D91BAB3 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

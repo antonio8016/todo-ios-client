@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2C9C1E9A0C164EE18A959285"
-               BuildableName = "libPods-TRVSMonitor.a"
-               BlueprintName = "Pods-TRVSMonitor"
+               BlueprintIdentifier = "C7D6CB7B556944759164EF19"
+               BuildableName = "libPods-NSRails.a"
+               BlueprintName = "Pods-NSRails"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

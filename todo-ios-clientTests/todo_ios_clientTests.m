@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import <TRVSMonitor/TRVSMonitor.h>
+#import <NSRails/NSRails.h>
 
 #import "TDItem.h"
 
@@ -21,6 +22,11 @@
 {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
+    [NSRConfig defaultConfig].appURL = @"http://todo-rest-api.herokuapp.com";
+    [NSRConfig defaultConfig].usesWrappersInSerialization = YES;
+    
+    
+    
 }
 
 - (void)tearDown
@@ -32,9 +38,9 @@
 - (void)testExample
 {
     TRVSMonitor *monitor = [TRVSMonitor monitor];
-    [TDItem all:^(NSArray *items, NSError *error) {
+    [TDItem remoteAllAsync:^(NSArray *items, NSError *error) {
         for (TDItem *item in items) {
-            NSLog(@"Item: %@", item.name);
+            XCTAssert(items.count == 3);
         }
         [monitor signal];
         
